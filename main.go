@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
+func multiply(a, b int) int {
+	return a * b
+}
+
 func main() {
-	name := "nico"
-	name = "lynn"
-	fmt.Println(name)
+	fmt.Println(multiply(2, 3))
 }
