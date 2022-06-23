@@ -2,17 +2,26 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/nagneo/go-jobs/banking"
+	"github.com/nagneo/go-jobs/mydict"
 )
 
 func main() {
-	account := banking.NewAccount("nico")
-	account.Deposit(1000)
-	err := account.Withdraw(20)
+	dictionary := mydict.Dictionary{"first": "First word"}
+	word := "hello"
+	definition := "Greeting"
+	err := dictionary.Add(word, definition)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
-	fmt.Println(account)
+
+	err = dictionary.Delete(word)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	_, err = dictionary.Search(word)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
