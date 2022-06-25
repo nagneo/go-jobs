@@ -14,6 +14,7 @@ type result struct {
 var errRequestFailed = errors.New("Error for request")
 
 func main() {
+	results := make(map[string]string)
 	c := make(chan result)
 	urls := []string{
 		"https://www.airbnb.com/",
@@ -35,7 +36,11 @@ func main() {
 	// Blocking Operation
 	for i := 0; i < len(urls); i++ {
 		result := <-c
-		fmt.Println(result)
+		results[result.url] = result.status
+	}
+
+	for url, status := range results {
+		fmt.Println(url, status)
 	}
 }
 
