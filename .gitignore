@@ -105,3 +105,6 @@ dist
 
 # VsCode
 .vscode
+
+# execution
+__debug_bin.exe
