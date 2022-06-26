@@ -108,3 +108,9 @@ dist
 
 # execution
 __debug_bin.exe
+
+#mode
+go.mod
+
+#sum
+go.sum
